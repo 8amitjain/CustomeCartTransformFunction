@@ -1,0 +1,21 @@
+query Input {
+  cart {
+      id
+    	buyerIdentity {
+      customer {
+        numberOfOrders
+      }
+    }
+    lines {
+      id 
+      merchandise {
+         ... on ProductVariant {
+          product {
+            title
+            is_free: hasAnyTag(tags: "free")
+        }
+      }
+    }
+  }
+}
+}
